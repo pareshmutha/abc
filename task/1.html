@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	</head>
+	<style type="text/css">
+		.playerSp
+			{
+				display: block;
+				background: url(blue_sprite.png) no-repeat;
+			}
+		.next-button
+			{
+				background-position: -83px -6px;
+				width: 41px;
+				height: 46px;
+			}
+	</style>
+	<body>
+		<div id="playerContainer">
+			<div id="nextdisabled" class="playerSp next-button" style="border:1px solid red; background-image: url(blue_sprite.png);"></div>
+		</div>
+	</body>
+
+	<script>
+		var actualWidth = 1014; 
+		
+		
+		var actualheight = 743; 
+		
+		
+		
+        
+		
+console.log("height:.."+screen.availHeight);
+console.log("width:.."+screen.availWidth);
+//alert($(document).height());
+
+console.log($(document).width());
+		var abc=(screen.availHeight+screen.availWidth);
+		$( window ).resize(function() {
+	var aaa=($(document).height()+$(document).width());
+		scale=abc/aaa;
+		console.log(scale);
+		//scale = 1
+		  $('#playerContainer').css({ 'zoom': (1/scale), '-moz-transform': 'scale('+(1/scale)+')', '-moz-transform-origin': '0 0 ' });
+		});
+	</script>
+</html>
